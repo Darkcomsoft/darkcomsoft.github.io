@@ -1,8 +1,19 @@
 <html>
   <script type="text/javascript">
-    let url_params = new URLSearchParams(document.location.search);
-    let videoid = url_params.get("id");
-    document.getElementById('youtubevideo').src = "https://www.youtube.com/embed/" + String(videoid) + "?autoplay=1";
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get("id");
+
+    // Verifica se o ID do vídeo existe antes de modificar o src
+    if (videoId) {
+        const videoElement = document.getElementById('youtubevideo');
+        if (videoElement) {
+            videoElement.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1`;
+        } else {
+            console.error("Elemento com id 'youtubevideo' não encontrado.");
+        }
+    } else {
+        console.error("Parâmetro 'id' não encontrado na URL.");
+    }
   </script>
   <head></head>
   <body style="border: 0;margin: 0;background-color: black;">
