@@ -3,10 +3,11 @@
 
     var params = { allowScriptAccess: "always" };
     var atts = { id: "myytplayer" };
-    swfobject.embedSWF("http://www.youtube.com/v/OyHoZhLdgYw?enablejsapi=1&playerapiid=ytplayer&version=3",
-                       "ytapiplayer", "425", "356", "8", null, null, params, atts);
-    let params = new URLSearchParams(document.location.search);
-    let videoid = params.get("id"); // is the string "Jonathan"
+    swfobject.embedSWF("http://www.youtube.com/v/OyHoZhLdgYw?enablejsapi=1&playerapiid=ytplayer&version=3", "ytapiplayer", "425", "356", "8", null, null, params, atts);
+
+    
+    let url_params = new URLSearchParams(document.location.search);
+    let videoid = url_params.get("id");
     document.getElementById('youtubevideo').src = "https://www.youtube.com/embed/" + videoid + "?autoplay=1";
   </script>
   <head></head>
