@@ -1,23 +1,24 @@
 <html>
-  <script type="text/javascript">
-    const urlParams = new URLSearchParams(window.location.search);
-    const videoId = urlParams.get("id");
-
-    // Verifica se o ID do vídeo existe antes de modificar o src
-    if (videoId) {
-        const videoElement = document.getElementById('youtubevideo');
-        if (videoElement) {
-            videoElement.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1`;
-        } else {
-            console.error("Elemento com id 'youtubevideo' não encontrado.");
-        }
-    } else {
-        console.error("Parâmetro 'id' não encontrado na URL.");
-    }
-  </script>
   <head></head>
   <body style="border: 0;margin: 0;background-color: black;">
    <iframe id="youtubevideo" width="1706" height="862" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" style="position: relative;width: 74%;height: 100%;border: 0;margin: 0;"></iframe>
    <embed src="https://www.twitch.tv/embed/hayashii/chat?darkpopout&parent=darkcomsoft.github.io" type="" style="width: 25%;height: 100%;position: relative;">
 </body>
+
+<script type="text/javascript">
+  const urlParams = new URLSearchParams(window.location.search);
+  const videoId = urlParams.get("id");
+
+  // Verifica se o ID do vídeo existe antes de modificar o src
+  if (videoId) {
+      const videoElement = document.getElementById('youtubevideo');
+      if (videoElement) {
+          videoElement.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1`;
+      } else {
+          console.error("Elemento com id 'youtubevideo' não encontrado.");
+      }
+  } else {
+      console.error("Parâmetro 'id' não encontrado na URL.");
+  }
+</script>
 </html>
